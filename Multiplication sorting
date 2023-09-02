@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+
+void solve(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i=0 ; i<n ; ++i) cin >> arr[i];
+
+    int count=0 , tot=0 , q=n-1 , ind=-1 , a=0 , inc=0 , dec=0 , eq=0;
+    if(arr[1] > arr[0]){
+        count++;
+        while(q--){
+            if(arr[a] > arr[a+1]) ind = a+2;
+            else break;
+        }
+    }
+
+    for(int i=a ; i<n-1 ; ++i){
+        if(arr[i] > arr[i+1]){
+            dec++;
+            pre[i] = 'D';
+        }
+        else if(arr[i] < arr[i+1]){
+            inc++;
+            pre[i] = 'I';
+        }
+        else equ++;
+    }
+
+    
+}
+
+signed main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    auto Harsh_Bhadauria = chrono::high_resolution_clock::now();
+
+    int t;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+}
